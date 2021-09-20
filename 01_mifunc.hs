@@ -1,5 +1,5 @@
 {-****************************
-  * 04.hs                    
+  * 04.hs                    *  
   ****************************-}
 --Mi funcion drop
 --Aprender if y sangria en haskell
