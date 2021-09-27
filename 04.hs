@@ -8,3 +8,8 @@
                else x * 2
 --if
     fun' x = if x > 10 then x else x * 2 + 1
+--Patrones
+--Funcion probando suerte-Comportamiento de una funcion 
+    suerte::(Integral a) => a -> String 
+    suerte 3 = ":)"
+    suerte x = ":(" --Patrron mas general 
