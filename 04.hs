@@ -42,3 +42,19 @@
     extraeDos (x:[]) = "Primer elemento: "++show x
     extraeDos (x:y:[]) = "Tiene dos elementos: "++show x ++", "++show y
     extraeDos (x:y:_) = "Primeros dos: "++show x++", "++show y
+    
+--Funcion de guardas
+--Se utiliza RealFloat (Float y Double) por facilidad. Subclase de Fractional
+--https://www.haskell.org/tutorial/numbers.html
+    estatura :: RealFloat a => a ->String 
+    estatura m
+            | m <= 1.50 = "Estatura muy baja"
+            | m <= 1.65 = "Estatura baja"
+            | m <= 1.75 = "Estatura alta"
+            | otherwise = "Estatura muy alta"
+
+--Funcion max 
+    mayor :: (Ord a) => a-> a-> a
+    mayor x y 
+         | x > y = x
+         | otherwise = y
