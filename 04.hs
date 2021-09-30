@@ -58,3 +58,63 @@
     mayor x y 
          | x > y = x
          | otherwise = y
+        
+--Funcion comparacion
+    compa :: (Ord a) => a->a->Ordering 
+    x `compa` y
+          |x > y     =GT
+          |x == y    =EQ
+          |otherwise = LT
+
+--Recursion Guardas factorial
+    facto :: Integer -> Integer
+    facto x
+         | x <= 0    = 1
+         | otherwise = x*facto(x-1)
+
+--Recursion Guardas fibonacci
+    fibo :: Integer -> Integer
+    fibo x
+         | x <= 0    = 0
+         | x == 1    = 1
+         | x >= 2    = fibo(x-1) + fibo(x-2)
+
+--where: variables solo visibles en esa funcion
+--Permite no repetir codigo
+    temp :: (RealFloat a) => a->a->String 
+    temp m v
+         | (m + v) / 2 <= 10.0 = "Frio" 
+         | (m + v) / 2 <= 20.0 = "Templado"  
+         | (m + v) / 2 <= 22.0 = "Caliente"  
+         | otherwise           = "Muy caliente"  
+
+--Reduciendo con where 
+    temp1 :: (RealFloat a) => a->a->String 
+    temp1 m v
+         | t <= 10.0 = "Frio" 
+         | t / 2 <= 20.0 = "Templado"  
+         | t / 2 <= 22.0 = "Caliente"  
+         | otherwise           = "Muy caliente"
+         where t = (m + v) / 2
+
+--Sentencia where y let 
+    potencia :: Int -> Int
+    potencia x = x * x where x = 2
+
+    pottencia :: Int -> Int 
+    pottencia x = let x = 2 in x * x
+
+{-
+    formula = do
+              let   a = 1
+                    b = 2
+                    c = 1
+                in (-1) * b + sqrt((b * b) - (4*a*c)) / (2a)
+-}
+
+--Funciones de orden superior
+
+--Funciones como parametros y devuelve funciones 
+    f_mas :: Int-> Int-> Int 
+    f_mas x y = x + y
+
