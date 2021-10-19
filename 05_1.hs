@@ -20,3 +20,4 @@ main =
 suma_arbol :: Num a => Tree a -> a
 suma_arbol Vacio = 0
 suma_arbol (Nodo n i d) = n + suma_arbol i + suma_arbol d
+--Programa terminado
