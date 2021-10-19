@@ -23,3 +23,11 @@ area(Cir r) = 3.1416 * r * r
 data Alumno = Dato String [Int] deriving(Show)
 hugo = Dato "Hugo" [70, 80, 75, 90]
 paco = Dato "Francisco" [100, 95, 90, 92]
+
+data Busq a = Vacio |Nodo a (Busq a)(Busq a) deriving (Show,Read, Eq)
+busqIns :: Ord a => Busq a -> a-> Busq a 
+busqIns Vacio x = Nodo x Vacio Vacio
+busqIns (Nodo valor izq der) x = if x < valor then 
+                                      Nodo valor(busqIns izq x)der
+                                 else
+                                      Nodo valor izq(busqIns der x)
